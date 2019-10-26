@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <header class="flex-row">
+        <div class="rect flex"><i class="fas fa-bars"></i></div>
+        <div class="title flex"><span>CodeJam - Pallete</span></div>
+        <div class="rect flex"><i class="fas fa-ellipsis-v"></i></div>
+    </header>
+    <main class="flex-row">
+        <aside class="tools flex-column">
+            <div class="tool-box">
+                <div class="tool-line flex-row">
+                    <div class="rect"><i class="fas fa-fill-drip"></i></div>
+                    <span class="tool-name">Paint bucket</span>
+                </div>
+                <div class="tool-line flex-row">
+                    <div class="rect"><i class="fas fa-eye-dropper"></i></div>
+                    <span class="tool-name">Choose color</span>
+                </div>
+                <hr>
+                <div class="tool-line flex-row">
+                    <div class="rect"><i class="fas fa-arrows-alt"></i></div>
+                    <span class="tool-name">Move</span>
+                </div>
+                <div class="tool-line flex-row">
+                    <div class="rect"><i class="fas fa-exchange-alt"></i></div>
+                    <span class="tool-name">Transform</span>
+                </div>
+            </div>
+            <div class="tool-box">
+                <div class="tool-line flex-row">
+                    <div class="rect color" style="background-color:#C4C4C4;"></div>
+                    <span class="tool-name">Current color</span>
+                </div>
+                <div class="tool-line flex-row">
+                    <div class="rect color" style="background-color:#41F795;"></div>
+                    <span class="tool-name">Prev color</span>
+                </div>
+                <hr>
+                <div class="tool-line flex-row">
+                    <div class="rect color" style="background-color:#F74141;"></div>
+                    <span class="tool-name">red</span>
+                </div>
+                <div class="tool-line flex-row">
+                    <div class="rect color" style="background-color:#41B6F7;"></div>
+                    <span class="tool-name">blue</span>
+                </div>
+            </div>
+        </aside>
+        <div class="main-field flex">
+            <canvas id="drawField"></canvas>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/de740ea9e1.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
