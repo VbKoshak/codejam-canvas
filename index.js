@@ -6256,13 +6256,21 @@ let drawPhoto = (fileName = "templatePhoto.png") => {
     const img = new Image();
     img.src = "./res/" + fileName;
     img.onload = () => {
-        console.log(img.height);
-        console.log(img.width);
         ctx.drawImage(img,0,0,img.width,img.height,0,0,options.FIELD_SIZE,options.FIELD_SIZE);
+        changeSize(options.FIELD_SIZE);
     };
 };
 
-let init = (size = 32) => {
+let changeField = (value, isPhoto) => {
+    if (isPhoto){
+        drawPhoto(value?value:undefined);
+    } else {
+        changeSize(value);
+        drawImage(options.basicInstructions[value]);
+    }
+}
+
+let init = (size = 4) => {
     canvas.width = options.FIELD_SIZE;
     canvas.height = options.FIELD_SIZE;
     changeSize(size);
@@ -6270,3 +6278,34 @@ let init = (size = 32) => {
 };
 
 init();
+
+let size4 = document.getElementById('size4');
+let size32 = document.getElementById('size32');
+let photo = document.getElementById('photo');
+
+let clearLines = () => {
+    size4.classList.remove('checked');
+    size32.classList.remove('checked');
+    photo.classList.remove('checked');
+};
+
+let checkLine = (el, prop) => {
+    if (prop == 'photo'){
+        changeField(undefined,true);
+    } else {
+        changeField(prop,false);
+    }
+    clearLines();
+    el.classList.add('checked');
+};
+
+
+size4.onclick = () => {
+    checkLine(size4,4);
+};
+size32.onclick = () => {
+    checkLine(size32, 32);
+};
+photo.onclick = () => {
+    checkLine(photo, 'photo');
+};
