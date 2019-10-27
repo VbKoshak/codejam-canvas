@@ -6252,6 +6252,16 @@ let drawImage = (instructions) => {
     }
 };
 
+let drawPhoto = (fileName = "templatePhoto.png") => {
+    const img = new Image();
+    img.src = "./res/" + fileName;
+    img.onload = () => {
+        console.log(img.height);
+        console.log(img.width);
+        ctx.drawImage(img,0,0,img.width,img.height,0,0,options.FIELD_SIZE,options.FIELD_SIZE);
+    };
+};
+
 let init = (size = 32) => {
     canvas.width = options.FIELD_SIZE;
     canvas.height = options.FIELD_SIZE;
