@@ -63,8 +63,8 @@ main {
 }
 
 aside {
-    width: 25%;
-    justify-content: space-evenly;
+    flex: 1;
+    justify-content: space-between;
 }
 
 .tool-box {
@@ -81,6 +81,10 @@ aside {
     color: rgba(0, 0, 0, 0.541327);
 }
 
+.tool-line.checked{
+    background-color: rgba(211, 203, 203, 0.507);
+}
+
 .tool-box hr {
     height: 1px;
 }
@@ -93,5 +97,11 @@ canvas {
 .main-field{
     align-items: center;
     justify-content: center;    
-    width:75%;
+    flex:2;
+}
+
+.options-bar{
+    flex: 1;
+    align-items: center;
+    justify-content: flex-start;
 }
